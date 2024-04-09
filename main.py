@@ -29,7 +29,7 @@ class Aff(BaseModel):
         return v
     
     @validator('state')
-    def validate_city(cls, v):
+    def validate_state(cls, v):
         if len(v) > 40:
             raise ValueError('State must be less than 25 characters')
         if not re.match(r'^[a-zA-Z-]+$', v):
@@ -37,7 +37,7 @@ class Aff(BaseModel):
         return v
     
     @validator('nation')
-    def validate_city(cls, v):
+    def validate_nation(cls, v):
         if len(v) > 40:
             raise ValueError('Nation must be less than 25 characters')
         if not re.match(r'^[a-zA-Z-\s]+$', v):
